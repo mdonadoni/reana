@@ -10,11 +10,13 @@
 
 import datetime
 import os
+import re
 import subprocess
 import sys
 from typing import Optional
 
 import click
+import yaml
 
 from reana.config import (
     COMPONENTS_USING_SHARED_MODULE_COMMONS,
@@ -28,6 +30,8 @@ from reana.config import (
     PYTHON_VERSION_FILE,
     RELEASE_COMMIT_REGEX,
     REPO_LIST_ALL,
+    REPO_LIST_CLUSTER_INFRASTRUCTURE,
+    REPO_LIST_CLUSTER_RUNTIME_BATCH,
     REPO_LIST_PYTHON_REQUIREMENTS,
     REPO_LIST_SHARED,
 )
@@ -1584,6 +1588,61 @@ def git_tag(component, exclude_components):  # noqa: D301
 
         current_version = get_current_component_version_from_source_files(component)
         run_command(f"git tag {current_version}", component=component)
+
+
+@git_commands.command(name="git-aggregate-changelog")
+def get_aggregate_changelog():  # noqa: D301
+    """TODO"""
+
+    for component in REPO_LIST_CLUSTER_INFRASTRUCTURE + REPO_LIST_CLUSTER_RUNTIME_BATCH:
+        if not is_last_commit_release_commit(component):
+            click.secho(
+                "The last commit is not a release commit. Please use `reana-dev git-create-release-commit`.",
+                fg="red",
+            )
+            sys.exit(1)
+
+    with open(get_srcdir("reana") + "/helm/reana/values.yaml") as values_file:
+        values = yaml.safe_load(values_file)
+
+    aggregated_changelog = []
+    for component in REPO_LIST_CLUSTER_INFRASTRUCTURE + REPO_LIST_CLUSTER_RUNTIME_BATCH:
+        image = values["components"][component.replace("-", "_")]["image"]
+        prev_version = image.split(":")[1]
+
+        with open(get_srcdir(component) + "/CHANGELOG.md") as f:
+            changelog_lines = f.readlines()
+
+        start_index = None
+        for i, line in enumerate(changelog_lines):
+            if line.startswith("##"):
+                start_index = i
+                break
+
+        end_index = None
+        for i, line in enumerate(changelog_lines):
+            prev_version_escaped = prev_version.replace(".", "\.")
+            if re.match(f"^##\s+\[?{prev_version_escaped}", line):
+                end_index = i
+                break
+
+        filtered_lines = []
+        current_section = ""
+        for line in changelog_lines[start_index:end_index]:
+            if line.startswith("### "):
+                current_section = line[len("### ") :].strip()
+
+            if line.startswith("## "):
+                line = f"### {component}" + line[len("##") :]
+                filtered_lines.append("\n")
+                filtered_lines.append(line)
+                filtered_lines.append("\n")
+            elif line.startswith("*"):
+                filtered_lines.append(f"* [{current_section}]" + line[1:])
+
+        aggregated_changelog += filtered_lines
+
+    print("".join(aggregated_changelog))
 
 
 git_commands_list = list(git_commands.commands.values())
