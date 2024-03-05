@@ -10,11 +10,13 @@
 
 import datetime
 import os
+import re
 import subprocess
 import sys
 from typing import Optional
 
 import click
+import yaml
 
 from reana.config import (
     COMPONENTS_USING_SHARED_MODULE_COMMONS,
@@ -28,6 +30,8 @@ from reana.config import (
     PYTHON_VERSION_FILE,
     RELEASE_COMMIT_REGEX,
     REPO_LIST_ALL,
+    REPO_LIST_CLUSTER_INFRASTRUCTURE,
+    REPO_LIST_CLUSTER_RUNTIME_BATCH,
     REPO_LIST_PYTHON_REQUIREMENTS,
     REPO_LIST_SHARED,
 )
@@ -1584,6 +1588,57 @@ def git_tag(component, exclude_components):  # noqa: D301
 
         current_version = get_current_component_version_from_source_files(component)
         run_command(f"git tag {current_version}", component=component)
+
+
+@git_commands.command(name="git-aggregate-changelog")
+def get_aggregate_changelog():  # noqa: D301
+    """TODO"""
+
+    for component in REPO_LIST_CLUSTER_INFRASTRUCTURE + REPO_LIST_CLUSTER_RUNTIME_BATCH:
+        if not is_last_commit_release_commit(component):
+            click.secho(
+                "The last commit is not a release commit. Please use `reana-dev git-create-release-commit`.",
+                fg="red",
+            )
+            sys.exit(1)
+
+    with open(get_srcdir("reana") + "/helm/reana/values.yaml") as values_file:
+        values = yaml.safe_load(values_file)
+
+    all_commits = []
+    for component in REPO_LIST_CLUSTER_INFRASTRUCTURE + REPO_LIST_CLUSTER_RUNTIME_BATCH:
+        image = values["components"][component.replace("-", "_")]["image"]
+        prev_version = image.split(":")[1]
+        raw_commits = run_command(
+            f"git log --pretty=format:%s {prev_version}..",
+            component,
+            return_output=True,
+        ).splitlines()
+        for commit in raw_commits:
+            matches = re.match("^([^(:]+)(?:\((.*)\))?:(.*)$", commit)
+            if not matches:
+                print(f"couldn't parse commit '{commit}'")
+                all_commits.append(commit)
+                continue
+
+            type_ = matches.group(1).strip()
+            scope = matches.group(2).strip()
+            description = matches.group(3).strip().replace("#", "")
+
+            print(type_, scope, description)
+
+            if scope:
+                new_commit = f"{type_}({component}/{scope}): {description}"
+            else:
+                new_commit = f"{type_}({component}): {description}"
+
+            all_commits.append(new_commit)
+
+    commit_options = " ".join((f"-m '{c}'" for c in all_commits))
+    run_command(
+        f"git commit --allow-empty -m 'chore: aggregate changelog' {commit_options}",
+        component="reana",
+    )
 
 
 git_commands_list = list(git_commands.commands.values())
