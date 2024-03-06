@@ -1,5 +1,162 @@
 # Changelog
 
+## [0.9.3](https://github.com/reanahub/reana/compare/0.9.2...0.9.3) (2024-03-05)
+
+
+### Build
+
+* **helm:** add support for Kubernetes 1.29 ([#775](https://github.com/reanahub/reana/issues/775)) ([ae90500](https://github.com/reanahub/reana/commit/ae90500acbc101913df1e0b25aa3f2d48de997f0))
+
+
+### Features
+
+* **helm:** add value to customise env vars of job controller ([#781](https://github.com/reanahub/reana/issues/781)) ([634691f](https://github.com/reanahub/reana/commit/634691fd32cfb08d59eafbae66f23ebc384ca84b))
+* **helm:** add value to customise PostgreSQL docker image ([#774](https://github.com/reanahub/reana/issues/774)) ([07a191f](https://github.com/reanahub/reana/commit/07a191f19c60ac5d11cf1373ef8feaa16b80f0ee)), closes [#773](https://github.com/reanahub/reana/issues/773)
+* **helm:** add value to customise URL of privacy notice ([#778](https://github.com/reanahub/reana/issues/778)) ([650ddbd](https://github.com/reanahub/reana/commit/650ddbd32441251e3d2ff64d8fce463dedb24e51))
+* **helm:** add values to customise env vars of workflow engines ([#781](https://github.com/reanahub/reana/issues/781)) ([35ee032](https://github.com/reanahub/reana/commit/35ee032da142916b4c966b2a2077a720a5710664))
+* **helm:** use PostgreSQL 14.10 in local dev deployment ([#774](https://github.com/reanahub/reana/issues/774)) ([43ead8a](https://github.com/reanahub/reana/commit/43ead8ab3d2167458ffa590259b614ade233e853)), closes [#744](https://github.com/reanahub/reana/issues/744)
+* **reana-dev:** add date to commits bumping dependencies ([#787](https://github.com/reanahub/reana/issues/787)) ([a4cb84c](https://github.com/reanahub/reana/commit/a4cb84cf5967658365f4963fd7da179747bb764e))
+
+
+### Bug fixes
+
+* **reana-dev:** add PR number in commits bumping shared modules ([#783](https://github.com/reanahub/reana/issues/783)) ([57c6755](https://github.com/reanahub/reana/commit/57c67555e7e2055baeb2ebb6cd7bb0e4ba632a2c))
+* **reana-dev:** create commits that conform to conventional style ([#777](https://github.com/reanahub/reana/issues/777)) ([86d0133](https://github.com/reanahub/reana/commit/86d01331877212baf2081dbddc37f3de20983b56))
+* **reana-dev:** delete extra files with git-submodule --update ([#764](https://github.com/reanahub/reana/issues/764)) ([e5680ce](https://github.com/reanahub/reana/commit/e5680ce8bd1a9f80dde4ca448f9fc8d21aa1c6ca))
+* **reana-dev:** detect number of already open PR in commit suffix ([#783](https://github.com/reanahub/reana/issues/783)) ([c533c34](https://github.com/reanahub/reana/commit/c533c34c85360cec0646f4318b1e6653407f6703))
+* **reana-dev:** update container image labels when releasing ([#765](https://github.com/reanahub/reana/issues/765)) ([fe6bc2c](https://github.com/reanahub/reana/commit/fe6bc2c397e4af2d873761001bfe485e819211be))
+
+
+### Code refactoring
+
+* **docs:** move from reST to Markdown ([#776](https://github.com/reanahub/reana/issues/776)) ([79aedb9](https://github.com/reanahub/reana/commit/79aedb9ef2ba0c8a933fe2cac334bd51cd32dd85))
+
+
+### Code style
+
+* **black:** format with black v24 ([#772](https://github.com/reanahub/reana/issues/772)) ([311e157](https://github.com/reanahub/reana/commit/311e1573867b74d722e04835268d5686e5f64f15))
+
+
+### Continuous integration
+
+* **commitlint:** addition of commit message linter ([#767](https://github.com/reanahub/reana/issues/767)) ([be77666](https://github.com/reanahub/reana/commit/be77666bb80601c0211674a59a3f91d2609712f9))
+* **commitlint:** allow release commit style ([#785](https://github.com/reanahub/reana/issues/785)) ([a6f95ac](https://github.com/reanahub/reana/commit/a6f95aca9ca1b3fb1663ee2fa7d876ff0da2bf02))
+* **commitlint:** check for the presence of concrete PR number ([#771](https://github.com/reanahub/reana/issues/771)) ([2c34634](https://github.com/reanahub/reana/commit/2c34634465723d1b9aa3858ce3898625f4ba572f))
+* **release-please:** initial configuration ([#767](https://github.com/reanahub/reana/issues/767)) ([bb45539](https://github.com/reanahub/reana/commit/bb455393ac1b4d149cfef4df6e96ae730c25501c))
+* **release-please:** update version in Helm Chart ([#770](https://github.com/reanahub/reana/issues/770)) ([09c9210](https://github.com/reanahub/reana/commit/09c9210d68e29d094c0e76a4002b17a21fcda701))
+* **shellcheck:** fix exit code propagation ([#771](https://github.com/reanahub/reana/issues/771)) ([035d51c](https://github.com/reanahub/reana/commit/035d51ca95dbab1c225316667ea2d199d924c851))
+
+
+### Documentation
+
+* **authors:** complete list of contributors ([#779](https://github.com/reanahub/reana/issues/779)) ([123eae8](https://github.com/reanahub/reana/commit/123eae8d4d97846f895ba652bdf30df35dcd7c00))
+* **chat:** remove Gitter ([#782](https://github.com/reanahub/reana/issues/782)) ([aba8ac2](https://github.com/reanahub/reana/commit/aba8ac2ae1b5cee0a8970edb2c85453657deb159))
+
+
+### reana-ui [0.9.4](https://github.com/reanahub/reana-ui/compare/0.9.3...0.9.4) (2024-03-04)
+
+* [Build] **package:** require jsroot&lt;7.6.0 ([#399](https://github.com/reanahub/reana-ui/issues/399)) ([d53b290](https://github.com/reanahub/reana-ui/commit/d53b290f7264e5da8e7b31c6ef2015748146e2f0))
+* [Build] **package:** update yarn.lock ([#399](https://github.com/reanahub/reana-ui/issues/399)) ([10e41b1](https://github.com/reanahub/reana-ui/commit/10e41b17cc45cb43fafa5f755c2730aa6c047933))
+* [Features] **footer:** link privacy notice to configured URL ([#393](https://github.com/reanahub/reana-ui/issues/393)) ([f0edde6](https://github.com/reanahub/reana-ui/commit/f0edde6bf4ceb8a92915446d0353df009919b8f3)), closes [#392](https://github.com/reanahub/reana-ui/issues/392)
+* [Bug fixes] **launcher:** remove dollar sign in generated Markdown ([#389](https://github.com/reanahub/reana-ui/issues/389)) ([8ad4afd](https://github.com/reanahub/reana-ui/commit/8ad4afdf9053a3736e4df036646aa114260f79d9))
+* [Bug fixes] **progress:** update failed workflows duration using finish time ([#387](https://github.com/reanahub/reana-ui/issues/387)) ([809fdc5](https://github.com/reanahub/reana-ui/commit/809fdc5e8b35ef03490921d15febcdb819fa6df7)), closes [#386](https://github.com/reanahub/reana-ui/issues/386)
+* [Bug fixes] **router:** show 404 page for invalid URLs ([#382](https://github.com/reanahub/reana-ui/issues/382)) ([c18e81d](https://github.com/reanahub/reana-ui/commit/c18e81ded87db6fbbbf06237d747f9655e0e5cc9)), closes [#379](https://github.com/reanahub/reana-ui/issues/379)
+* [Code refactoring] **docs:** move from reST to Markdown ([#391](https://github.com/reanahub/reana-ui/issues/391)) ([8d58277](https://github.com/reanahub/reana-ui/commit/8d582775ab1a0779601e37f9b9498f76cc5ce4cd))
+* [Documentation] **authors:** complete list of contributors ([#396](https://github.com/reanahub/reana-ui/issues/396)) ([814d68e](https://github.com/reanahub/reana-ui/commit/814d68ef5e2103a5f33e0dcf97bd8ffd777db78f))
+
+### reana-message-broker [0.9.3](https://github.com/reanahub/reana-message-broker/compare/0.9.2...0.9.3) (2024-03-01)
+
+* [Bug fixes] **startup:** handle signals for graceful shutdown ([#59](https://github.com/reanahub/reana-message-broker/issues/59)) ([abb8969](https://github.com/reanahub/reana-message-broker/commit/abb8969c5fa817fb2db5143df53d89d898225645))
+* [Code refactoring] **docs:** move from reST to Markdown ([#65](https://github.com/reanahub/reana-message-broker/issues/65)) ([e5bd869](https://github.com/reanahub/reana-message-broker/commit/e5bd8695a0c4d6184e83eef1fbb410566ffa370d))
+* [Documentation] **authors:** complete list of contributors ([#66](https://github.com/reanahub/reana-message-broker/issues/66)) ([56fbc8c](https://github.com/reanahub/reana-message-broker/commit/56fbc8c48acc687dbf7d228b2cfe19a6db50a01f))
+
+### reana-server [0.9.3](https://github.com/reanahub/reana-server/compare/0.9.2...0.9.3) (2024-03-04)
+
+* [Build] **deps:** pin invenio-userprofiles to 1.2.4 ([#665](https://github.com/reanahub/reana-server/issues/665)) ([d6cb168](https://github.com/reanahub/reana-server/commit/d6cb16854aea78d852ab43987a44933a9d6fbcad))
+* [Build] **docker:** non-editable submodules in "latest" mode ([#656](https://github.com/reanahub/reana-server/issues/656)) ([d16fefb](https://github.com/reanahub/reana-server/commit/d16fefb421e1d0cc712006c6a697ea67057b1f6c))
+* [Build] **python:** bump all required packages as of 2024-03-04 ([#674](https://github.com/reanahub/reana-server/issues/674)) ([f40b82f](https://github.com/reanahub/reana-server/commit/f40b82f983d295348a4a5a537b4147a9dc8b6dae))
+* [Build] **python:** bump shared modules ([#676](https://github.com/reanahub/reana-server/issues/676)) ([47ad3ca](https://github.com/reanahub/reana-server/commit/47ad3caab04119568b0f790075784aae59c3818d))
+* [Build] **python:** bump shared REANA packages as of 2024-03-04 ([#674](https://github.com/reanahub/reana-server/issues/674)) ([aa18394](https://github.com/reanahub/reana-server/commit/aa18394458d56806913e224e1b6651a177d18b39))
+* [Code refactoring] **docs:** move from reST to Markdown ([#671](https://github.com/reanahub/reana-server/issues/671)) ([b6d1799](https://github.com/reanahub/reana-server/commit/b6d1799552085e1a9c2ad53eafcd572f1af4f3bf))
+* [Code style] **black:** format with black v24 ([#670](https://github.com/reanahub/reana-server/issues/670)) ([6d2b898](https://github.com/reanahub/reana-server/commit/6d2b898b2322e6677739fdb1c3bd3916a3cf0887))
+* [Documentation] **authors:** complete list of contributors ([#673](https://github.com/reanahub/reana-server/issues/673)) ([71b3f38](https://github.com/reanahub/reana-server/commit/71b3f387b0816e23a3315c379ed45af0bb6661a3))
+
+### reana-workflow-controller [0.9.3](https://github.com/reanahub/reana-workflow-controller/compare/0.9.2...0.9.3) (2024-03-04)
+
+* [Build] **docker:** non-editable submodules in "latest" mode ([#551](https://github.com/reanahub/reana-workflow-controller/issues/551)) ([af74d0b](https://github.com/reanahub/reana-workflow-controller/commit/af74d0b887d02109ce96c91ef8fdf99e4eb4ff34))
+* [Build] **python:** bump all required packages as of 2024-03-04 ([#574](https://github.com/reanahub/reana-workflow-controller/issues/574)) ([1373f4c](https://github.com/reanahub/reana-workflow-controller/commit/1373f4c3ea9480cc7ccb05ab12fc62a029e1f792))
+* [Build] **python:** bump shared REANA packages as of 2024-03-04 ([#574](https://github.com/reanahub/reana-workflow-controller/issues/574)) ([e31d903](https://github.com/reanahub/reana-workflow-controller/commit/e31d9038280a68ff84595caa64f010a4f25fc63a))
+* [Features] **manager:** call shutdown endpoint before workflow stop ([#559](https://github.com/reanahub/reana-workflow-controller/issues/559)) ([719fa37](https://github.com/reanahub/reana-workflow-controller/commit/719fa370839dd29ce8071b2d1e203ff37c5ff4f1))
+* [Features] **manager:** increase termination period of run-batch pods ([#572](https://github.com/reanahub/reana-workflow-controller/issues/572)) ([f05096a](https://github.com/reanahub/reana-workflow-controller/commit/f05096ac7d5c6e7a535772966ccbbb2e07a325ef))
+* [Features] **manager:** pass custom env variables to job controller ([#571](https://github.com/reanahub/reana-workflow-controller/issues/571)) ([646f071](https://github.com/reanahub/reana-workflow-controller/commit/646f071feb61c7b901cc8979b02bc846a3f0a343))
+* [Features] **manager:** pass custom env variables to workflow engines ([#571](https://github.com/reanahub/reana-workflow-controller/issues/571)) ([cb9369b](https://github.com/reanahub/reana-workflow-controller/commit/cb9369bb3ca6beb70d0693fef277df1958121169))
+* [Bug fixes] **manager:** graceful shutdown of job-controller ([#559](https://github.com/reanahub/reana-workflow-controller/issues/559)) ([817b019](https://github.com/reanahub/reana-workflow-controller/commit/817b019b3745862436e99570c10c6d8ea35533f4))
+* [Bug fixes] **manager:** use valid group name when calling `groupadd` ([#566](https://github.com/reanahub/reana-workflow-controller/issues/566)) ([73a9929](https://github.com/reanahub/reana-workflow-controller/commit/73a9929a742e18a482824c2ca9a7c52f1f46227e)), closes [#561](https://github.com/reanahub/reana-workflow-controller/issues/561)
+* [Bug fixes] **stop:** store engine logs of stopped workflow ([#563](https://github.com/reanahub/reana-workflow-controller/issues/563)) ([199c163](https://github.com/reanahub/reana-workflow-controller/commit/199c16313d97932f80080585a0c617b6b0e3a78d)), closes [#560](https://github.com/reanahub/reana-workflow-controller/issues/560)
+* [Code refactoring] **consumer:** do not update status of jobs ([#559](https://github.com/reanahub/reana-workflow-controller/issues/559)) ([5992034](https://github.com/reanahub/reana-workflow-controller/commit/599203403576784f6efabd158df7282431265cdc))
+* [Code refactoring] **docs:** move from reST to Markdown ([#567](https://github.com/reanahub/reana-workflow-controller/issues/567)) ([4fbdb74](https://github.com/reanahub/reana-workflow-controller/commit/4fbdb74a5351155b7e0ac4ac97114a8fa3ec60f5))
+* [Code style] **black:** format with black v24 ([#564](https://github.com/reanahub/reana-workflow-controller/issues/564)) ([2329437](https://github.com/reanahub/reana-workflow-controller/commit/23294373b384e19280c00f3116100816e7277e40))
+* [Documentation] **authors:** complete list of contributors ([#570](https://github.com/reanahub/reana-workflow-controller/issues/570)) ([08ab9a3](https://github.com/reanahub/reana-workflow-controller/commit/08ab9a3358ee8b027a62e1a528f7e135a676b55a))
+
+### reana-job-controller [0.9.3](https://github.com/reanahub/reana-job-controller/compare/0.9.2...0.9.3) (2024-03-04)
+
+* [Build] **certificates:** update expired CERN Grid CA certificate ([#440](https://github.com/reanahub/reana-job-controller/issues/440)) ([8d6539a](https://github.com/reanahub/reana-job-controller/commit/8d6539a94af035aca1191c9a6a7ff43791a3c930)), closes [#439](https://github.com/reanahub/reana-job-controller/issues/439)
+* [Build] **docker:** non-editable submodules in "latest" mode ([#416](https://github.com/reanahub/reana-job-controller/issues/416)) ([3bdda63](https://github.com/reanahub/reana-job-controller/commit/3bdda6367d9a4682028a2a7df7268e4c9b42ef6c))
+* [Build] **python:** bump all required packages as of 2024-03-04 ([#442](https://github.com/reanahub/reana-job-controller/issues/442)) ([de119eb](https://github.com/reanahub/reana-job-controller/commit/de119eb8f663dcfe1a126747a7c404e39ece47c0))
+* [Build] **python:** bump shared REANA packages as of 2024-03-04 ([#442](https://github.com/reanahub/reana-job-controller/issues/442)) ([fc77628](https://github.com/reanahub/reana-job-controller/commit/fc776284abe15030581d5adf4aa575f4f3a1c756))
+* [Features] **shutdown:** stop all running jobs before stopping workflow ([#423](https://github.com/reanahub/reana-job-controller/issues/423)) ([866675b](https://github.com/reanahub/reana-job-controller/commit/866675b7288e840130cfee851f4a248a9ae2617d))
+* [Bug fixes] **database:** limit the number of open database connections ([#437](https://github.com/reanahub/reana-job-controller/issues/437)) ([980f749](https://github.com/reanahub/reana-job-controller/commit/980f74982b75176c5958f09bc581e941cdf44310))
+* [Performance improvements] **cache:** avoid caching jobs when the cache is disabled ([#435](https://github.com/reanahub/reana-job-controller/issues/435)) ([553468f](https://github.com/reanahub/reana-job-controller/commit/553468f55f6b63cebba45ccd460593131e5dcfea)), closes [#422](https://github.com/reanahub/reana-job-controller/issues/422)
+* [Code refactoring] **db:** set job status also in the main database ([#423](https://github.com/reanahub/reana-job-controller/issues/423)) ([9d6fc99](https://github.com/reanahub/reana-job-controller/commit/9d6fc99063deb468fe9d45d9ad626c745c7bd827))
+* [Code refactoring] **docs:** move from reST to Markdown ([#428](https://github.com/reanahub/reana-job-controller/issues/428)) ([4732884](https://github.com/reanahub/reana-job-controller/commit/4732884a3da52694fb86d72873eceef3ad2deb27))
+* [Code refactoring] **monitor:** centralise logs and status updates ([#423](https://github.com/reanahub/reana-job-controller/issues/423)) ([3685b01](https://github.com/reanahub/reana-job-controller/commit/3685b01a57e1d0b1bd363534ff331b988e04719e))
+* [Code refactoring] **monitor:** move fetching of logs to job-manager ([#423](https://github.com/reanahub/reana-job-controller/issues/423)) ([1fc117e](https://github.com/reanahub/reana-job-controller/commit/1fc117ebb3dd908a01ee3fd539fa24a07cdb4d16))
+* [Code style] **black:** format with black v24 ([#426](https://github.com/reanahub/reana-job-controller/issues/426)) ([8a2757e](https://github.com/reanahub/reana-job-controller/commit/8a2757ee8bf52d1d5189f1dd1d690cb8922599cb))
+* [Documentation] **authors:** complete list of contributors ([#434](https://github.com/reanahub/reana-job-controller/issues/434)) ([b9f8364](https://github.com/reanahub/reana-job-controller/commit/b9f83647fa8fc337140da5c3f2814ea24a15c5d5))
+
+### reana-workflow-engine-cwl [0.9.3](https://github.com/reanahub/reana-workflow-engine-cwl/compare/0.9.2...0.9.3) (2024-03-04)
+
+* [Build] **docker:** install correct extras of reana-commons submodule ([#261](https://github.com/reanahub/reana-workflow-engine-cwl/issues/261)) ([21957fe](https://github.com/reanahub/reana-workflow-engine-cwl/commit/21957fe41921d9c557067b2773205af6385f755b))
+* [Build] **docker:** non-editable submodules in "latest" mode ([#255](https://github.com/reanahub/reana-workflow-engine-cwl/issues/255)) ([a6acc88](https://github.com/reanahub/reana-workflow-engine-cwl/commit/a6acc888a36694e3306993cfc3108752b60bd1f3))
+* [Build] **python:** bump all required packages as of 2024-03-04 ([#267](https://github.com/reanahub/reana-workflow-engine-cwl/issues/267)) ([ed6a846](https://github.com/reanahub/reana-workflow-engine-cwl/commit/ed6a846eb1d8a0bf92f77906749b5853e5794114))
+* [Build] **python:** bump shared REANA packages as of 2024-03-04 ([#267](https://github.com/reanahub/reana-workflow-engine-cwl/issues/267)) ([47155ef](https://github.com/reanahub/reana-workflow-engine-cwl/commit/47155ef95c4eb19642dd54a732402b2551973658))
+* [Bug fixes] **progress:** handle stopped jobs ([#260](https://github.com/reanahub/reana-workflow-engine-cwl/issues/260)) ([bc36cb7](https://github.com/reanahub/reana-workflow-engine-cwl/commit/bc36cb7813a20fde685a40694af0732ded483d3a))
+* [Code refactoring] **docs:** move from reST to Markdown ([#263](https://github.com/reanahub/reana-workflow-engine-cwl/issues/263)) ([3cf272f](https://github.com/reanahub/reana-workflow-engine-cwl/commit/3cf272f657cc3e0b329c6d159f5e476f06000f93))
+* [Documentation] **authors:** complete list of contributors ([#266](https://github.com/reanahub/reana-workflow-engine-cwl/issues/266)) ([2960cd9](https://github.com/reanahub/reana-workflow-engine-cwl/commit/2960cd9c06a8e12283822ec9fbf87aba7b9b9fb5))
+* [Documentation] **conformance-tests:** update CWL conformance test badges ([#264](https://github.com/reanahub/reana-workflow-engine-cwl/issues/264)) ([45afa2e](https://github.com/reanahub/reana-workflow-engine-cwl/commit/45afa2efd984fd84bbae48fde6ca663f70dd86dc))
+
+### reana-workflow-engine-serial [0.9.3](https://github.com/reanahub/reana-workflow-engine-serial/compare/0.9.2...0.9.3) (2024-03-04)
+
+* [Build] **docker:** install correct extras of reana-commons submodule ([#196](https://github.com/reanahub/reana-workflow-engine-serial/issues/196)) ([b23f4df](https://github.com/reanahub/reana-workflow-engine-serial/commit/b23f4df602d80d62626e8e907181a8c710eb662f))
+* [Build] **docker:** non-editable submodules in "latest" mode ([#190](https://github.com/reanahub/reana-workflow-engine-serial/issues/190)) ([03a15cf](https://github.com/reanahub/reana-workflow-engine-serial/commit/03a15cfa7973152f9923ecade412d8eab3ea80e3))
+* [Build] **python:** bump all required packages as of 2024-03-04 ([#200](https://github.com/reanahub/reana-workflow-engine-serial/issues/200)) ([ffc8aec](https://github.com/reanahub/reana-workflow-engine-serial/commit/ffc8aec739e2284f301586d47618ff6c4142643a))
+* [Build] **python:** bump shared REANA packages as of 2024-03-04 ([#200](https://github.com/reanahub/reana-workflow-engine-serial/issues/200)) ([47c26cc](https://github.com/reanahub/reana-workflow-engine-serial/commit/47c26ccfbfdfc7419c4a6fab1d7abf95a667e4e2))
+* [Bug fixes] **progress:** handle stopped jobs ([#195](https://github.com/reanahub/reana-workflow-engine-serial/issues/195)) ([a232a76](https://github.com/reanahub/reana-workflow-engine-serial/commit/a232a76627e09bfb401de4f547540c6012357986))
+* [Code refactoring] **docs:** move from reST to Markdown ([#198](https://github.com/reanahub/reana-workflow-engine-serial/issues/198)) ([7507d12](https://github.com/reanahub/reana-workflow-engine-serial/commit/7507d1243af43f4621e117f4f92569f4dd7271f6))
+* [Documentation] **authors:** complete list of contributors ([#199](https://github.com/reanahub/reana-workflow-engine-serial/issues/199)) ([e9b25b6](https://github.com/reanahub/reana-workflow-engine-serial/commit/e9b25b6ab37421971d02c52422ed19fce249b4ea))
+
+### reana-workflow-engine-yadage [0.9.4](https://github.com/reanahub/reana-workflow-engine-yadage/compare/0.9.3...0.9.4) (2024-03-04)
+
+* [Build] **docker:** install correct extras of reana-commons submodule ([#256](https://github.com/reanahub/reana-workflow-engine-yadage/issues/256)) ([8b4caf0](https://github.com/reanahub/reana-workflow-engine-yadage/commit/8b4caf033a765d2db77942a94a58807ac2230ca7))
+* [Build] **docker:** non-editable submodules in "latest" mode ([#249](https://github.com/reanahub/reana-workflow-engine-yadage/issues/249)) ([a57716a](https://github.com/reanahub/reana-workflow-engine-yadage/commit/a57716a5d7ca6c453f3ed6b977226e47139a9ead))
+* [Build] **python:** bump all required packages as of 2024-03-04 ([#261](https://github.com/reanahub/reana-workflow-engine-yadage/issues/261)) ([2a02e19](https://github.com/reanahub/reana-workflow-engine-yadage/commit/2a02e19bbf1a3c8b29f8185e4946d382aa8f27e5))
+* [Build] **python:** bump shared REANA packages as of 2024-03-04 ([#261](https://github.com/reanahub/reana-workflow-engine-yadage/issues/261)) ([493aee1](https://github.com/reanahub/reana-workflow-engine-yadage/commit/493aee14c1224d5d961c792cc12d21bff314b007))
+* [Bug fixes] **progress:** correctly handle running and stopped jobs ([#258](https://github.com/reanahub/reana-workflow-engine-yadage/issues/258)) ([56ef6a4](https://github.com/reanahub/reana-workflow-engine-yadage/commit/56ef6a4e434d82d8cfb9916bcfa84a0219bc2e03))
+* [Code refactoring] **docs:** move from reST to Markdown ([#259](https://github.com/reanahub/reana-workflow-engine-yadage/issues/259)) ([37f05e6](https://github.com/reanahub/reana-workflow-engine-yadage/commit/37f05e6f864c33b721f7926f60d6f68f9d2f841a))
+* [Documentation] **authors:** complete list of contributors ([#260](https://github.com/reanahub/reana-workflow-engine-yadage/issues/260)) ([68f97a0](https://github.com/reanahub/reana-workflow-engine-yadage/commit/68f97a0aff07b16e2707423185925c8d6d22c33b))
+
+### reana-workflow-engine-snakemake [0.9.3](https://github.com/reanahub/reana-workflow-engine-snakemake/compare/0.9.2...0.9.3) (2024-03-04)
+
+* [Build] **docker:** install correct extras of reana-commons submodule ([#79](https://github.com/reanahub/reana-workflow-engine-snakemake/issues/79)) ([fd9b88a](https://github.com/reanahub/reana-workflow-engine-snakemake/commit/fd9b88a857ba016343d956e42a49b6fbc906f068))
+* [Build] **docker:** non-editable submodules in "latest" mode ([#73](https://github.com/reanahub/reana-workflow-engine-snakemake/issues/73)) ([c3595c2](https://github.com/reanahub/reana-workflow-engine-snakemake/commit/c3595c297e90f74a9215fd76c6d6b5f69d640440))
+* [Build] **python:** bump all required packages as of 2024-03-04 ([#85](https://github.com/reanahub/reana-workflow-engine-snakemake/issues/85)) ([66e81e2](https://github.com/reanahub/reana-workflow-engine-snakemake/commit/66e81e2148ad4ba72099a90dbb556454df3cfc99))
+* [Build] **python:** bump shared REANA packages as of 2024-03-04 ([#85](https://github.com/reanahub/reana-workflow-engine-snakemake/issues/85)) ([d07f91f](https://github.com/reanahub/reana-workflow-engine-snakemake/commit/d07f91f6f725050c681c66ec920727f26db3fdbf))
+* [Features] **config:** get max number of parallel jobs from env vars ([#84](https://github.com/reanahub/reana-workflow-engine-snakemake/issues/84)) ([69cfad4](https://github.com/reanahub/reana-workflow-engine-snakemake/commit/69cfad460b240e5dbafea42137d891d6fea607a5))
+* [Features] **executor:** upgrade to Snakemake v7.32.4 ([#81](https://github.com/reanahub/reana-workflow-engine-snakemake/issues/81)) ([4a3f359](https://github.com/reanahub/reana-workflow-engine-snakemake/commit/4a3f3592c8dd3f323e81850f5bdfae45ea893825))
+* [Bug fixes] **progress:** handle stopped jobs ([#78](https://github.com/reanahub/reana-workflow-engine-snakemake/issues/78)) ([4829d80](https://github.com/reanahub/reana-workflow-engine-snakemake/commit/4829d80a5e03ab5788fb6646bd792a7345abe14a))
+* [Code refactoring] **docs:** move from reST to Markdown ([#82](https://github.com/reanahub/reana-workflow-engine-snakemake/issues/82)) ([31de94f](https://github.com/reanahub/reana-workflow-engine-snakemake/commit/31de94f79b1955328961d506ce9d8d4efbe7227f))
+* [Documentation] **authors:** complete list of contributors ([#83](https://github.com/reanahub/reana-workflow-engine-snakemake/issues/83)) ([4782678](https://github.com/reanahub/reana-workflow-engine-snakemake/commit/478267864a20da6ab4d7f99be5592fcf19a20ca1))
+
 ## 0.9.2 (2023-12-19)
 
 - Users:
